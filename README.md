@@ -16,7 +16,11 @@ How to install, setup and control the Robotiq 2F-140 Gripper on a Kuka LBR IIWA 
 
 - Add the gripper's controller to SYS-44 KUKA Extension Bus. Right click on EtherCAT under "KUKA Extension Bus(SYS-X44)", choose "add" and then find the controller(NIC 50-RE/ECS) in DTM selection list and press OK.
 
-![Project Structure](assets/images/1_bus_structure.png)
-*Project Structure with the gripper interface added.*
+![Project Structure](assets/images/1_bus_structure.png?raw=true)
 
-- The final step is to map the inputs and outputs of the gripper to the robot controller.
+ <sup>*Project Structure with the gripper interface added.*</sup>
+
+
+- The final step is to map the inputs and outputs of the gripper to the robot controller. We will use the Gripper Register Mapping from [Robotiq Instruction Manual](https://assets.robotiq.com/website-assets/support_documents/document/2F-85_2F-140_Instruction_Manual_e-Series_PDF_20190206.pdf):
+
+![Register Mapping](assets/images/2_register_mapping.png)
