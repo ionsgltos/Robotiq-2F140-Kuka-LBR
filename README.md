@@ -24,3 +24,25 @@ How to install, setup and control the Robotiq 2F-140 Gripper on a Kuka LBR IIWA 
 - The final step is to map the inputs and outputs of the gripper to the robot controller. We will use the Gripper Register Mapping from [Robotiq Instruction Manual](https://assets.robotiq.com/website-assets/support_documents/document/2F-85_2F-140_Instruction_Manual_e-Series_PDF_20190206.pdf):
 
 ![Register Mapping](assets/images/2_register_mapping.png)
+
+You have to recreate the table above in WorksVisual. In the "Sunrise I/Os" tab choose the "NIC 50-RE/ECS extension bus and press "Creates signal at the provider"
+
+![Sunrise I/Os Groups](assets/images/3_Sunrise_IO_Groups.png)
+
+In the newly opened window choose "Create" and add a group name and a group description. Then using the "Edit I/O" field add all the inputs and outputs of the table above. When you press "OK" you will have your new Sunrise I/O Group.
+
+![Create IO Signals](assets/images/4_createIOsignals.png)
+
+![Robotiq Gripper Mapping](assets/images/5_robotiq_gripper_mapping.png)
+
+Finally you have to map the IO signals you have just created. From the table above the "ActionRequest" is the Byte0 and it is an output. You have to map it with the "Outputs0.1 Byte Out (0)". In order to do that you have to slide the green arrow of the "ActionRequest" to "Outputs0.1 Byte Out (0)". If you do it right you will see the mapping action in the field above:
+
+![Create ActionRequest mapping](assets/images/6_mapping_process.png)
+
+The complete mapping:
+
+![Complete Mapping Process](assets/images/7_complete_mapping_process.png)
+
+- Export the I/O configuration to Sunrise Workbench with "File --> Import/Export --> Export I/O configuration to Sunrise Workbench project", upload the project to the robot controller and restart your robot.
+
+![Export configuration](assets/images/8_export_configuration.png)
